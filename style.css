@@ -1,0 +1,297 @@
+/* --- Global Styles --- */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #f0f0f0;
+    text-align: center;
+    margin: 0;
+    padding: 0; /* Set padding to 0 */
+}
+
+/* --- Full Page Sections --- */
+.page-section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('Taj-Mahal-bg.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; 
+    padding: 40px 0;
+    box-sizing: border-box; 
+}
+
+/* --- Container --- */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* --- Title Styles --- */
+.tm {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.tml {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 5em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+}
+
+.tm_quot {
+    margin-top: 0px;
+    font-size: 1.3em;
+    font-style: italic;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+    max-width: 600px;
+    margin: 10px auto 0 auto;
+}
+
+/* --- Story Text Style (for the first paragraph) --- */
+.story-text {
+    font-size: 1.3em;
+    line-height: 1.7;
+    color: #f0f0f0;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
+    max-width: 600px; /* Constrains the width */
+    margin: 20px auto 40px auto; /* Centers it */
+    text-align: center; /* Center-aligns the first story text */
+}
+
+/* --- Side-by-Side Container (for Video) --- */
+.side-by-side-container {
+    display: flex;
+    flex-direction: column; /* MOBILE: Stacks them */
+    margin: 40px auto;
+    max-width: 900px;
+}
+
+/* --- Side-by-Side Container (for Slider) --- */
+.slider-text-container {
+    display: flex;
+    flex-direction: column; /* MOBILE: Stacks them */
+    margin: 40px auto;
+    max-width: 900px; 
+    align-items: center; /* Center on mobile */
+}
+
+/* --- General .text-block (used by both side-by-side sections) --- */
+.text-block {
+    text-align: center; /* Center text on mobile */
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
+    font-size: 1.1em;
+    line-height: 1.7;
+    margin-bottom: 30px; 
+    max-width: 600px; 
+}
+
+/* --- The Image Slider --- */
+.slider-container {
+    width: 100%; /* Make it fill its new container */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    overflow: hidden; 
+}
+
+.slider-container img-comparison-slider img {
+    object-fit: contain;
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* --- The Video Container --- */
+.video-container {
+    width: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    overflow: hidden; 
+}
+
+.video-container video {
+    width: 100%;
+    display: block;
+}
+
+/* --- Media Queries for Desktop (CONSOLIDATED) --- */
+@media (min-width: 768px) {
+    
+    /* Video Section on Desktop */
+    .side-by-side-container {
+        flex-direction: row; /* DESKTOP: Side-by-side */
+        align-items: center;
+        gap: 30px; 
+    }
+
+    /* Slider Section on Desktop */
+    .slider-text-container {
+        flex-direction: row; /* DESKTOP: Side-by-side */
+        gap: 50px; 
+        align-items: center; 
+    }
+    
+    /* Text blocks in both sections on Desktop */
+    .text-block {
+        flex: 1; /* Takes 50% width */
+        text-align: left; /* Left-align text on desktop */
+        margin-bottom: 0;
+    }
+
+    /* Slider on Desktop */
+    .slider-container {
+        flex: 1; /* Takes 50% width */
+        max-width: 450px; /* Give it a max-width */
+    }
+
+    /* Video on Desktop */
+    .video-container {
+        flex: 1; /* Takes 50% width */
+    }
+}
+
+/* --- Suggestions Carousel Section --- */
+.suggestions-title {
+    color: #ffffff;
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: 600;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+    margin-bottom: 30px;
+}
+
+.swiper {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+/* --- FINAL CARD STYLE --- */
+.swiper-slide {
+    width: 300px;
+    height: 400px; /* This FIXED height is crucial */
+    position: relative; 
+    border-radius: 18px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* This separates the image and info */
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    flex-grow: 1; /* The image fills all available space */
+    object-fit: cover;
+    overflow: hidden; /* Fix for some browsers */
+}
+
+.slide-info {
+    width: 100%;
+    flex-shrink: 0; /* The info box does not shrink */
+    background-color: rgba(255, 255, 255, 0.95);
+    color: #333333;
+    padding: 15px;
+    box-sizing: border-box;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.slide-info h3 {
+    margin: 0 0 8px 0;
+    font-size: 1.3em;
+    color: #007aff;
+}
+
+.slide-info p {
+    margin: 0 0 5px 0;
+    font-size: 0.85em;
+    line-height: 1.3;
+}
+
+.slide-info p.tip {
+    font-style: italic;
+    color: #555555;
+    margin-bottom: 0;
+}
+
+/* --- Swiper Navigation Styles --- */
+.swiper-button-next,
+.swiper-button-prev {
+    color: #ffffff;
+}
+.swiper-pagination-bullet-active {
+    background: #ffffff;
+}
+
+/* --- NEW: Map Section Styles --- */
+/* --- Map Section Styles --- */
+.map-title {
+    color: #ffffff;
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: 600;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+    margin-bottom: 30px;
+}
+
+.map-container {
+    width: 100%;
+    max-width: 800px;
+    height: 450px; /* This sets the container height */
+    margin: 0 auto;
+    border: 3px solid rgba(255, 255, 255, 0.5);
+    border-radius: 18px;
+    overflow: hidden; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.map-container iframe {
+    /* These two lines tell the map to fill the container */
+    width: 100%;
+    height: 100%;   
+}
+
+/* --- NEW: Google Translate Button (Improved Design) --- */
+#google_translate_element {
+    position: fixed;   
+    top: 20px;         
+    right: 20px;       
+    z-index: 1000;     
+}
+
+/* This styles the main dropdown menu */
+#google_translate_element .goog-te-combo {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI";
+    font-weight: 500;
+    
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    color: #ffffff; /* White text */
+    
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Light border */
+    border-radius: 8px;
+    padding: 8px 12px;
+    
+    /* This makes the dropdown arrow white (for most browsers) */
+    filter: invert(1) brightness(1.5); 
+}
+
+/* This hides the "Powered by Google" text */
+.goog-logo-link, 
+.goog-te-gadget .goog-te-attribution {
+    display: none !important;
+}
+
+/* This is the hack to HIDE the Google Translate bar that appears at the top */
+body > .skiptranslate {
+    display: none;
+}
+body {
+    top: 0 !important; /* Resets the page position */
+}
+
